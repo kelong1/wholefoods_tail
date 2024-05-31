@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+      	screens:{
+      		sm:"500px",
+      		md:"768px",
+      		lg:"1020px",
+      		xl:"1440px"
+      	}
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/css">
+    .ham{
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      transition: 0.25s;
+      position: relative;
+    }
+    .ham-top,.ham-middle,.ham-bottom{
+      content: "";
+      position:absolute;
+      width: 24px;
+      height: 3px;
+      top: 0;
+      left: 0;
+      background:#000;
+      transform: rotate(0);
+      transition: all 0.5s
+    }
+    .ham-middle{
+      transform: translateY(7px);
+    }
+     .ham-bottom{
+      transform: translateY(14px);
+      background: #000
+    }
+    .open{
+      transform: rotate(90deg);
+      transform: translateY(0px);
+    }
+    .open .ham-top{
+      transform: rotate(45deg)translateY(6px)translateY(6px);
+    
+    }
+    .open .ham-middle{
+      display: none;
+    }
+     .open .ham-bottom{
+      transform: rotate(-45deg)translateY(6px)translateY(6px);
+      
+    }
+  </style>
+</head>
+<body>
+  <header>
+ <div class="relative flex  items-center justify-between md:px-12  md:flex-row w-full h-16 mx-auto ">
+ 	<div class=" font-bold text-xl  pt-4 md:text-3xl md:pt-0">Whole Foods</div>
+ 	<div class="hidden  mt-16 space-y-4 md:flex md:flex-row md:space-x-4 md:space-y-0 md:mt-0 text-lg">
+ 		<div><a href="#">Home</a></div>
+ 		<div><a href="#">About</a></div>
+ 		<div><a href="#">Contacts </a></div>
+ 		<div><a href="#"></a>FAQs</div>
+ 	</div>
+  <button class=" block focus:outline-none ham md:hidden">
+    <span class="ham-top"></span>
+    <span class="ham-middle"></span>
+    <span class="ham-bottom"></span>
+  </button>
+</div>
+    <div class="md:hidden hidden absolute top-16 left-0 z-30 flex flex-col items-center justify-center space-y-4 w-full h-3/5 bg-green-500 text-lg opacity-90 divide-y divide-gray-500">
+    <div><a href="#">Home</a></div>
+    <div ><a href="#">About</a></div>
+    <div ><a href="#">Contacts </a></div>
+    <div ><a href="#">FAQs</a></div>
+  </div>
+
+ </header>
+ <section class="mt-16 md:mt-0">
+ 	<div class="mb-16 flex flex-col-reverse  md:flex-row w-full md:min-h-screen mx-auto md:mb-0 -mt-16 ">
+    <div class="w-full md:w-1/2 flex flex-col items-center justify-center space-y-4 md:space-y-0" >
+    <div class="px-12  flex flex-col items-center justify-center w-full md:px-32  " >
+ 		<div class="text-xl md:text-4xl font-bold flex items-center justify-center">Experience the best of nature with Whole Foods Market. </div>
+ 		<div class="text-md text-green flex items-center justify-center">From farm-fresh produce to artisanal breads, we offer a wide selection of organic and sustainably sourced foods to nourish your body and delight your senses. Explore our seasonal specials and enjoy the taste of quality in every bite.</div>
+  </div>
+ 		<div class="flex items-center justify-center  space-x-4 md:px-32 px-12 w-full">
+ 			<button class="border-2 rounded-lg shadow-md bg-green-500 h-16 w-1/2">Shop Now</button>
+ 			<button  class="border-2 rounded-lg shadow-md bg-green-500 h-16 flex-1 ">Find a Store</button>
+ 		</div>
+  </div>
+ 		<div  class="flex items-center justify-center px-12"><img src="./images/food.jpeg" class="rounded-lg shadow-md"></div>
+
+ 	</div>
+ </section>
+</body>
+</html>
